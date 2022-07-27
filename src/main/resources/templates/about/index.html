@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nile Grocery & Ethiopian Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles-about.css" th:href="@{/css/stylesabout.css}">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+
+    <script>
+        $("#search").click(function(e) {
+            e.preventDefault();
+            $(".search_box").toggleClass('active');
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div class=grid-layout>
+        <header>
+            <div class="logo">
+                <a th:href="@{/}">
+                    <img class="logo_image" th:src="@{/images/nile_logo.png}" alt="nile Logo">
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="../index.html" th:href= "@{/}" title="Home page">Home</a></li>
+                    <li><a href="../menu/index.html" th:href= "@{/menu}" title="Menu page">Menus</a></li>
+                    <li><a href="../order/index.html" th:href= "@{/order}" title="order page">Order</a></li>
+                    <li><a href="../contact/contact1.html" th:href= "@{/contact}" title="contact page">Contact</a></li>
+
+                </ul>
+            </div>
+            
+        </header>
+        <main>
+            <div class="cream_box">
+                <h1>About Nile Grocery & Restaurant</h1>
+                <div class="forrest_line"></div>
+            </div>
+
+            <div class="restaurant">
+                <div class="green_line one"></div>
+                <h1>The Restaurant</h1>
+                <br>
+                <p>This small, cozy restaurant (with only four booths and a few tables) is flying under the radar. Dishes are made from scratch after you order, so don’t come here when you’re in a rush. Service and quality are outstanding and they serve
+                    some of the best Ethiopian coffee in town. Foods ranging from Doro wot (spicy chicken stew) to tibs (marinated and seasoned cubed/cut up meat) are available for you to order. There are also items to purchase such as spices, kitchen
+                    utencils, traditional clothing, for customers to buy. </p>
+            </div>
+
+            <div class="image_container">
+                <img class="tsege" th:src="@{imgAbout/nilegrocery.jpg}">
+                <img class="zeray" th:src="@{imgAbout/nilegrocery3.jpeg}">
+                
+            </div>
+
+            <div class="chefs">
+                <div class="green_line two"></div>
+                <h1>Tsige Meshesha and Zerabruk Abay</h1>
+                <p>Husband and wife, Zerabruk Abay and Tsige Meshesha, moved to Charlotte in 1999 in hopes of finding work in Mr. Abay’s chosen profession as a textile engineer. The couple had escaped political tensions in their native country of Ethiopia.
+                    Mr. Abay studied textile engineering in the former Soviet Union, and then the couple lived in Germany as refugees before moving to the United States in search of better opportunities. By the time the couple emigrated to Charlotte,
+                    the textile industry had declined and there was no work.
+                </p>
+
+                <p>Ms. Meshesha was baking injera, traditional fermented bread made in Ethiopia, out of her Charlotte home and selling to customers. Nile Grocery and it subsequent success was built on Ms. Meshesha’s injera.</p>
+
+                <p>The couple opened Nile Grocery in 2005 after noticing a lack of Ethiopian sundries and cultural food in the area. In 2010, they added the restaurant component and Ms. Meshesha began serving Ethiopian cuisine, including the traditional
+                    coffee ceremony. Today, she teaches others how to make injera, and the couple has created a vibrant community for Ethiopians and non-Ethiopians alike.
+                </p>
+            </div>
+
+            <div class="table">
+                <div class="green_line"></div>
+                <h1>Mission and Values</h1>
+
+                <p>Mission:Each and every member of the Nile family holds a shared mission of working diligently to create authentic food by maximizing local resources to foster strong customer relationships. Vision - Holding true to the values and essence
+                    of the art of Ethiopian dining and cuisine, Nile aims to introduce as many people as they can to Ethiopian culture and continue preparing food deep-seated in the roots of Ethiopian cushion that also resonate with the local people.
+                    <br> Values - Creative, warm-hearted Ethiopian hospitality, high-quality prepared food, and take our guests on a food journey to Ethiopia right from their seats by using spices, dining tradition, and music.
+            </div>
+
+        </main>
+
+
+
+
+        <footer>
+            <div class=footer_links>
+                <ul>
+                    <li><a class="white_link" href="../about/index.html" th:href = "@{/about}">About</a></li>
+                    <div class="circle"></div>
+                    <li><a class="white_link" href="../community/index.html" th:href ="@{/community}">Community</a></li>
+                    <div class="circle"></div>
+                    <li><a class="white_link" href="../press/press.html" th:href = "@{/press}">Press</a></li>
+                </ul>
+
+
+
+
+            </div>
+            <div class=socialmedia>
+                <a href="https://www.instagram.com/nilegrocery/?hl=en">
+                    <i id=social class="fab fa-twitter-square fa-3x" style="color:#000000;"></i></a>
+                <a href="https://www.instagram.com/nilegrocery/?hl=en">
+                    <i id=social class="fab fa-instagram fa-3x" style="color:#000000;"></i></a>
+                <a href="https://www.facebook.com/pages/category/Cafe/Nile-Grocery-Cafe-1200226006660902/">
+                    <i id=social class="fab fa-facebook-square fa-3x" style="color:#000000;"></i>
+                </a>
+            </div>
+            <div class=footer_words>
+                <h2>Connect with us to hear more about menu items, events, and updates!</h2>
+                <h3>The Nile Grocery and Ethiopian Restaurant</h3>
+                <p class="copyright">&copy Copyright 2022</p>
+              </div>
+        </footer>
+    </div>
+</body>
+
+</html>
