@@ -585,4 +585,14 @@ h3 {
     .footer_words {
         font-size: 1.5vh;
     }
+
+}
+
+.copyright{
+color: white;
+font-size: small;
+}
+
+.nile{
+    font-size: medium;
 }
