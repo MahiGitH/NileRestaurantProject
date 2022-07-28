@@ -1,4 +1,4 @@
-package NileProject.controller;
+package nileProject.controller;
 
 
 import org.springframework.stereotype.Controller;
