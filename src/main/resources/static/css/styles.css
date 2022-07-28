@@ -136,6 +136,7 @@ header {
 
 .a {
     background-image: url(../images/slideshow1.jpg);
+    /*background-size: revert;*/
 }
 
 .button_box {
@@ -208,7 +209,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#C39B77;
+    background-color: #e9d8c2;
 }
 
 h1 {
@@ -224,8 +225,8 @@ h1 {
 .new_menu_gallery {
     grid-column: 1 / 7;
     grid-row: 17 / 28;
-    height: 70vh;
-    margin-top: 4vh;
+    height: 65vh;
+    margin-top: 5vh;
 }
 
 * {
