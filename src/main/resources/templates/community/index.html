@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nile Grocery & Ethiopian Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles-community.css" th:href="@{/css/stylescommunity.css}">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css">
+    <script src="../../static/js/script-community.js" async th:src="@{/order/scriptcommunity.js}"></script>
+
+    <script>
+        $("#search").click(function(e) {
+            e.preventDefault();
+            $(".search_box").toggleClass('active');
+        });
+    </script>
+</head>
+
+<body>
+    <div class=grid-layout>
+        <header>
+            <div class="logo">
+                <a th:href="@{/}"></a>
+                <img class="logo_image" th:src="@{/images/nile_logo.png}" alt="nile Logo">
+            </div>
+            <div class="nav-menu">
+                <ul>
+                <li><a href="../index.html" th:href= "@{/}" title="Home page">Home</a></li>
+                <li><a href="../menu/index.html" th:href= "@{/menu}" title="Menu page">Menus</a></li>
+                <li><a href="../order/index.html" th:href= "@{/order}" title="order page">Order</a></li>
+                <li><a href="../contact/contact1.html" th:href= "@{/contact}" title="contact page">Contact</a></li>
+
+                </ul>
+            </div>
+            <a class="clickable" href="../Community/mobilemenu/index.html">
+                <img src="../Community/images/three_lines.png">
+            </a>
+        </header>
+        <main>
+            <div class="cream_box">
+                <h1>Outreach</h1>
+                <div class="forrest_line"></div>
+            </div>
+
+
+            <div class="restaurant">
+                <div class="green_line"></div>
+                <h1>Our Community</h1>
+                <p>While authentic and traditional food is a huge part of our restaurant, we also focus on other activities that will allow us to reach out to the local habesha community, here in Charlotte, North Carolina. Our work consists of sponsoring
+                    and catering food to local organizations, such as the annual Ethiopian Celebration. We also allow for young kids to complete their volunteer hours by helping out at the restaurant. This teaches them how to prepare for future jobs and
+                    the responsibilies that come witt starting your own business.</p>
+            </div>
+
+            <div class="image_container">
+                <img class="pic1" th:src="@{/imgCommunity/helping1.png}">
+                <img class="pic2" th:src="@{imgCommunity/helping2.png}">
+                <img class="pic3" th:src="@{imgCommunity/helping3.png}">
+                <img class="pic4" th:src="@{imgCommunity/helping4.png}">
+                <img class="pic5" th:src="@{imgCommunity/helping5.png}">
+
+            </div>
+
+
+
+            <div class="chefs">
+                <div class="green_line1"></div>
+                <div class="new_menu_gallery">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 5</div>
+                            <img class="photo" th:src="@{imgCommunity/serve1.png}" style="width:100%">
+                            <div class="text">Sponsored the annual Ethiopian / Eritrean Celebration of Charlotte!</div>
+                        </div>
+
+                        <div id="hidden" class="mySlides fade">
+                            <div class="numbertext">2 / 5</div>
+                            <img class="photo" th:src="@{imgCommunity/serve2.png}" style="width:100%">
+                            <div class="text">Sponsored the annual Ethiopian / Eritrean Celebration of Charlotte!</div>
+                        </div>
+
+                        <div id="hidden" class="mySlides fade">
+                            <div class="numbertext">3 / 5</div>
+                            <img class="photo" th:src="@{imgCommunity/serve3.jpeg}" style="width:100%">
+                            <div class="text">Community get together at the Nile Restaurant!</div>
+                        </div>
+                        <div id="hidden" class="mySlides fade">
+                            <div class="numbertext">4 / 5</div>
+                            <img class="photo" th:src="@{imgCommunity/serve4.png}" style="width:100%">
+                            <div class="text">Showing people how Ethiopian Coffee is poured! </div>
+                        </div>
+                        <div id="hidden" class="mySlides fade">
+                            <div class="numbertext">5 / 5</div>
+                            <img class="photo" th:src="@{imgCommunity/serve5.png}" style="width:100%">
+                            <div class="text">Ceremony to show our culture to the community!</div>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="table">
+                <div class="green_line"></div>
+                <h1>Social Media</h1>
+
+                <p>To learn more about our Community Outreach Program, follow us below on Social Media.</p>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <div class=footer_links>
+                <ul>
+
+                    <li><a class="white_link" href="../about/index.html" th:href = "@{/about}">About</a></li>
+                    <div class="circle"></div>
+                    <li><a class="white_link" href="../community/index.html" th:href ="@{/community}">Community</a></li>
+                    <div class="circle"></div>
+                    <li><a class="white_link" href="../press/press.html" th:href = "@{/press}">Press</a></li>
+
+
+                </ul>
+
+
+
+
+            </div>
+            <div class=socialmedia>
+                <a href="https://www.instagram.com/nilegrocery/?hl=en">
+                    <i id=social class="fab fa-twitter-square fa-3x" style="color:#000000;"></i></a>
+                <a href="https://www.instagram.com/nilegrocery/?hl=en">
+                    <i id=social class="fab fa-instagram fa-3x" style="color:#000000;"></i></a>
+                <a href="https://www.facebook.com/pages/category/Cafe/Nile-Grocery-Cafe-1200226006660902/">
+                    <i id=social class="fab fa-facebook-square fa-3x" style="color:#000000;"></i>
+                </a>
+            </div>
+            <div class=footer_words>
+                <h2>Connect with us to hear more about our restaurant and more updates!</h2>
+                <h3 class="nile">The Nile Grocery and Ethiopian Restaurant</h3>
+                <p class="copyright"> &copy Copyright 2022</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+        </script>
+
+
+</body>
+
+</html>
