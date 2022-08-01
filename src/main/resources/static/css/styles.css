@@ -135,7 +135,7 @@ header {
 }
 
 .a {
-    background-image: url(../images/slideshow1.jpg);
+    background-image: url(../images/ethiomain.png);
     /*background-size: revert;*/
 }
 
@@ -391,6 +391,8 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+
 
 .circle {
     background-color: white;
