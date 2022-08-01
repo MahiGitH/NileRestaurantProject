@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nile Grocery & Ethiopian Restaurant</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/styles-press.css" th:href="@{/css/stylespress.css}">
+ 
+
+</head>
+
+<body>
+    <div class=grid>
+
+         <div class="logo">
+            <a th:href="@{/}">
+                <img class="logo_image" th:src="@{/images/nile_logo.png}" alt="nile Logo">
+            </a>
+        </div>
+
+        <ul class="nav_list">
+                    <li><a href="../index.html" th:href= "@{/}" title="Home page">Home</a></li>
+                    <li><a href="../menu/index.html" th:href= "@{/menu}" title="Menu page">Menus</a></li>
+                    <li><a href="../order/index.html" th:href= "@{/order}" title="order page">Order</a></li>
+                    <li><a href="../contact/contact1.html" th:href= "@{/contact}" title="contact page">Contact</a></li>
+        </ul>
+        
+        <a class="clickable" href="../mobilemenu/index.html">
+            <img src="images/three_lines.png" width="30" height="30">
+        </a>
+
+        <div class="magazines one">
+            <img th:src="@{/imgPress/img1.jpeg}" width="150" height="120">
+            <img th:src="@{/imgPress/img5.png}" width="150" height="120">
+            <img th:src="@{/imgPress/press2.jpg}" width="150" height="120">
+            <img th:src="@{/imgPress/press3.png}" width="150" height="120">
+            <img th:src="@{/imgPress/press4.png}" width="150" height="120">
+
+        </div>
+
+        <div class="info two">
+            <div class="blurb">
+                <p class="date">April 2019
+                </p>
+                <p class="name">Hoodline</p>
+                <p class="description">Nile Restaurant was named one of the 5 best African spots in Charlotte.
+                </p>
+
+            </div>
+            <div class="blurb">
+                <p class="date">Site for Reviews</p>
+                <p class="name">Yelp</p>
+                <p class="description"> Yelp offers a way for customers to leave reviews and see information such as times for Nile Restaurant.</p>
+            </div>
+            <div class="blurb">
+                <p class="date">January 2016 </p>
+                <p class="name">Charlotte Observer</p>
+                <p class="description">Charlotte Observer named Nile Grocery a great Family-Style restaurant in charlotte and one of the 4 best Ethiopian spots in Charlotte. </p>
+            </div>
+            <div class="blurb">
+                <p class="date">September 2011</p>
+                <p class="name">Southern Foodways Alliance</p>
+                <p class="description">This organization wrote an article on the founders and described the foundation of the Nile Restaurant. </p>
+            </div>
+            <div class="blurb">
+                <p class="date">January 2020 </p>
+                <p class="name">History South</p>
+                <p class="description">This organization talked about this family-style Ethiopian restaurant and named it "the most welcoming Ethiopian eating experience". </p>
+            </div>
+
+        </div>
+
+        <div class="magazines three">
+            <img th:src="@{/imgPress/img6.png}" width="150" height="120">
+            <img th:src="@{/imgPress/download.png}" width="150" height="120">
+            <img th:src="@{/imgPress/img7.jpeg}" width="150" height="120">
+            <img th:src="@{/imgPress/img7.png}" width="150" height="120">
+            <img th:src="@{/imgPress/img8.png}" width="150" height="120">
+
+
+
+        </div>
+
+        <div class="info four">
+            <div class="blurb">
+                <p class="date">Advertising</p>
+                <p class="name">Trip Advisor</p>
+                <p class="description">This website features the restaurant and revelant information for potential customers.</p>
+            </div>
+            <div class="blurb">
+                <p class="date">Online Ordering</p>
+                <p class="name">DoorDash</p>
+                <p class="description">This website offers online ordering to be delivered for customers and includes Nile Restaurant.</p>
+            </div>
+            <div class="blurb">
+                <p class="date">Adversiting</p>
+                <p class="name">YellowPages</p>
+                <p class="description">This website offers a platform for customers to get information on Nile Restaurant such as relevant payment methods, hours, etc.</p>
+            </div>
+            <div class="blurb">
+                <p class="date">Online Ordering</p>
+                <p class="name">GrubHub</p>
+                <p class="description">This is also another website where people can order food online for delivery includes Nile Restaurant.</p>
+            </div>
+            <div class="blurb">
+                <p class="date">Advertising</p>
+                <p class="name">YouTube</p>
+                <p class="description">The Nile Restaurant released a video advertising their restaurant through YouTube.
+                    <a href="https://www.youtube.com/watch?v=vrXH11JF0h4rl">Click here to watch</a>
+
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <footer>
+            <div class=footer_links>
+                
+            <ul>
+
+                <li><a class="white_link" href="../about/index.html" th:href = "@{/about}">About</a></li>
+                <div class="circle"></div>
+                <li><a class="white_link" href="../community/index.html" th:href ="@{/community}">Community</a></li>
+                <div class="circle"></div>
+                <li><a class="white_link" href="../press/press.html" th:href = "@{/press}">Press</a></li>
+
+
+            </ul>
+            </div>
+            <div class=socialmedia>
+                <a href="https://twitter.com/GroceryNile">
+                    <i id=social class="fab fa-twitter-square fa-3x" style="color:#000000;"></i></a>
+                <a href="https://www.instagram.com/nilegrocery/?hl=en">
+                    <i id=social class="fab fa-instagram fa-3x" style="color:#000000;"></i></a>
+                <a href="https://www.facebook.com/pages/category/Cafe/Nile-Grocery-Cafe-1200226006660902/">
+                    <i id=social class="fab fa-facebook-square fa-3x" style="color:#000000;"></i>
+                </a>
+            </div>
+            <div class=footer_words>
+                <h2>Connect with us to hear more about menu items, events, and updates!</h2>
+                <h3>The Nile Grocery and Ethiopian Restaurant</h3>
+                <p class="copyright"> Copyright 2022</p>
+              </div>
+     
+
+        </footer>
+    </div>
+
+
+</body>
+
+</html>
