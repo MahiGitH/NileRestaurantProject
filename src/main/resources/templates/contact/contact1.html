@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nile Grocery & Ethiopian Restaurant</title>
+<!--    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">-->
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" -->
+<!--          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
+
+    <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"/>
+
+
+    <link rel="stylesheet" href="../static/css/contact1.css" th:href="@{/css/contact1.css}">
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+
+</head>
+
+<body>
+<div class=grid>
+
+    <div class="logo">
+        <a th:href="@{/}">
+            <img class="logo_image" th:src="@{/images/nile_logo.png}" alt="nile Logo">
+        </a>
+    </div>
+
+    <ul class="nav_list">
+        <li><a href="../index.html" th:href= "@{/}" title="Home page">Home</a></li>
+        <li><a href="../menu/index.html" th:href= "@{/menu}" title="Menu page">Menus</a></li>
+        <li><a href="../order/index.html" th:href= "@{/order}" title="order page">Order</a></li>
+        <li><a href="../contact/contact1.html" th:href= "@{/contact}" title="contact page">Contact</a></li>
+    </ul>
+
+
+
+    <div class="card hours">
+        <h4 class="card-title">Hours</h4>
+        <p class="bold"> Breakfast, Lunch, Dinner:</p>
+        <p>Mon - Sat 9:00am - 9:00pm</p>
+        <p>Sun - 9:00am - 4:00pm</p>
+        <br>
+        <p class="bold">Lunch Time </p>
+        <p>Mon - Sat Until 8:00pm</p>
+    </div>
+    <div class="card contact">
+        <h4 class="card-title">Contact</h4>
+        <p class="bold">Phone:</p>
+        <p>704.531.6221</p>
+        <br>
+        <p class="bold">Email:</p>
+        <p>zerabrukabay@nilerestaurant.com</p>
+    </div>
+    <div class="card location">
+        <h4 class="card-title">Location</h4>
+        <p class="bold">3113 N Sharon Amity Rd</p>
+        <p>Charlotte, NC 28205</p>
+        <iframe class="map" src="https://maps.google.com/maps?q=3113%20N%20Sharon%20Amity%20Rd&t=&z=17&ie=UTF8&iwloc=&output=embed" width="400" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        <br>
+        <p>Parking is available right by the restaurant, along with parking for other places such as La-Shish Kabob.
+        </p>
+    </div>
+    <div class="card reservation">
+        <h4 class="card-title">Reservations</h4>
+
+        <div class="month">
+                <i class="fas fa-angle-left prev"></i>
+                <div class="date">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <i class="fas fa-angle-right next"></i>
+        </div>
+
+        <div class="calendar-content">
+            <div id="calendar-table" class="calendar-cells">
+
+        <div id="table-header">
+        <div class="weekdays">
+            <div class="col">Sun</div>
+            <div class="col">Mon</div>
+            <div class="col">Tue</div>
+            <div class="col">Wed</div>
+            <div class="col">Thu</div>
+            <div class="col">Fri</div>
+            <div class="col">Sat</div>
+        </div>
+        </div>
+
+        <div id="table-body" class="days">
+        </div>
+
+            </div>
+           </div>
+
+<!--        <div class="container">-->
+<!--            <div class="calendar">-->
+<!--        <div class="month">-->
+<!--            <i class="fas fa-angle-left prev"></i>-->
+<!--            <div class="date">-->
+<!--                <h1></h1>-->
+<!--                <p></p>-->
+<!--            </div>-->
+<!--            <i class="fas fa-angle-right next"></i>-->
+<!--        </div>-->
+
+<!--          <div class="weekdays">-->
+<!--            <div>Sun</div>-->
+<!--            <div>Mon</div>-->
+<!--            <div>Tue</div>-->
+<!--            <div>Wed</div>-->
+<!--            <div>Thu</div>-->
+<!--            <div>Fri</div>-->
+<!--            <div>Sat</div>-->
+<!--                </div>-->
+
+<!--                <div class="days"></div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+
+        <br>
+        <form>
+            <fieldset>
+                <p>
+                    <label>Time of Reservation : </label>
+                    <select id="myList">
+                        <option value="1">1:00</option>
+                        <option value="2">2:00</option>
+                        <option value="3">3:00</option>
+                        <option value="4">4:00</option>
+                        <option value="1">5:00</option>
+                        <option value="2">6:00</option>
+                        <option value="3">7:00</option>
+                        <option value="4">8:00</option>
+                        <option value="1">9:00</option>
+                        <option value="2">10:00</option>
+                        <option value="3">11:00</option>
+                        <option value="4">12:00</option>
+                    </select>
+                    <select id="myList">
+                        <option value="1">AM</option>
+                        <option value="2">PM</option>
+                    </select>
+                </p>
+            </fieldset>
+        </form>
+
+        <br>
+
+        <form>
+            <fieldset>
+                <p>
+                    <label>Party Size : </label>
+                    <select id="myList">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="1">5</option>
+                        <option value="2">6</option>
+                        <option value="3">7</option>
+                        <option value="4">8</option>
+                        <option value="1">9</option>
+                        <option value="2">10</option>
+                        <option value="3">11</option>
+                        <option value="4">12+</option>
+                    </select>
+                </p>
+            </fieldset>
+        </form>
+        <br>
+<!--        <input type="button" class="button" value="Make a Reservation"-->
+<!--               onClick="window.location.reload();">-->
+        <button class="button" onclick="myFunction()">Make a Reservation</button>
+<!--        <div class="addEventButtons">-->
+<!--        <a class="waves-effect waves-light btn blue lighten-2"-->
+<!--           id="addEventButton">Add</a>-->
+<!--        </div>-->
+    </div>
+
+    <footer>
+        <div class=footer_links>
+            <ul>
+                <li><a class="white_link" href="../about/index.html" th:href = "@{/about}">About</a></li>
+                <div class="circle"></div>
+                <li><a class="white_link" href="../community/index.html" th:href ="@{/community}">Community</a></li>
+                <div class="circle"></div>
+                <li><a class="white_link" href="../press/press.html" th:href = "@{/press}">Press</a></li>
+            </ul>
+        </div>
+
+        <div class=socialmedia>
+            <a href="https://www.twitter.com/GroceryNile/?hl=en">
+                <i id=social class="fab fa-twitter-square fa-3x" style="color:#000000;"></i></a>
+            <a href="https://www.instagram.com/nilegrocery/?hl=en">
+                <i id=social class="fab fa-instagram fa-3x" style="color:#000000;"></i></a>
+            <a href="https://www.facebook.com/pages/category/Cafe/Nile-Grocery-Cafe-1200226006660902/">
+                <i id=social class="fab fa-facebook-square fa-3x" style="color:#000000;"></i>
+            </a>
+        </div>
+
+        <div class=footer_words>
+            <h2>Connect with us to hear more about menu items, events, and updates!</h2>
+            <br>
+            <h3 class="nile">The Nile Grocery and Ethiopian Restaurant</h3>
+            <p class="copyright"> &copy Copyright 2022</p>
+        </div>
+
+    </footer>
+</div>
+<script>
+    const date = new Date();
+
+    const renderCalendar = () => {
+        date.setDate(1);
+
+        const monthDays = document.querySelector(".days");
+
+        const lastDay = new Date(
+            date.getFullYear(),
+            date.getMonth() + 1,
+            0
+        ).getDate();
+
+        const prevLastDay = new Date(
+            date.getFullYear(),
+            date.getMonth(),
+            0
+        ).getDate();
+
+        const firstDayIndex = date.getDay();
+
+        const lastDayIndex = new Date(
+            date.getFullYear(),
+            date.getMonth() + 1,
+            0
+        ).getDay();
+
+        const nextDays = 7 - lastDayIndex - 1;
+
+        const months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+
+        document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+
+        document.querySelector(".date p").innerHTML = new Date().toDateString();
+
+        let days = "";
+
+        for (let x = firstDayIndex; x > 0; x--) {
+            days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+        }
+
+        for (let i = 1; i <= lastDay; i++) {
+            if (
+                i === new Date().getDate() &&
+                date.getMonth() === new Date().getMonth()
+            ) {
+                days += `<div class="today">${i}</div>`;
+            } else {
+                days += `<div>${i}</div>`;
+            }
+        }
+
+        for (let j = 1; j <= nextDays; j++) {
+            days += `<div class="next-date">${j}</div>`;
+            monthDays.innerHTML = days;
+        }
+    };
+
+    document.querySelector(".prev").addEventListener("click", () => {
+        date.setMonth(date.getMonth() - 1);
+        renderCalendar();
+    });
+
+    document.querySelector(".next").addEventListener("click", () => {
+        date.setMonth(date.getMonth() + 1);
+        renderCalendar();
+    });
+
+    renderCalendar();
+
+    // var date = new Date();
+    //
+    // var day = date.getDate();
+    // var month = date.getMonth() + 1;
+    // var year = date.getFullYear();
+    //
+    // if (month < 10) month = "0" + month;
+    // if (day < 10) day = "0" + day;
+    //
+    // var today = year + "-" + month + "-" + day;
+    //
+    //
+    // document.getElementById('theDate').value = today;
+
+    function myFunction() {
+        alert("Your reservation is successful, Thank you for choosing us!");
+    }
+</script>
+
+</body>
+
+</html>
