@@ -573,7 +573,7 @@
                                 margin-left: 1vw;
                             }
                             .image_container>img {
-                                height: 25;
+                                height: 25px;
                             }
                             .restaurant>h1 {
                                 font-size: 1.2em;
@@ -618,7 +618,7 @@
                         }
                         @media only screen and (max-width: 496px) {
                             .image_container>img {
-                                height: 25;
+                                height: 25px;
                             }
                             .restaurant>h1 {
                                 font-size: 1em;
