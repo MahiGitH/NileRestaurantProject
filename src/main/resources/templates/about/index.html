@@ -12,14 +12,7 @@
     
     <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
 
-    <script>
-        $("#search").click(function(e) {
-            e.preventDefault();
-            $(".search_box").toggleClass('active');
-        });
-    </script>
-
-
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
@@ -27,7 +20,7 @@
         <header>
             <div class="logo">
                 <a th:href="@{/}">
-                    <img class="logo_image" th:src="@{/images/nile_logo.png}" alt="nile Logo">
+                    <img class="logo_image" th:src="@{/images/nile_logo.png}" alt="nile Logo"> </a>
             </div>
             <div class="nav-menu">
                 <ul>
