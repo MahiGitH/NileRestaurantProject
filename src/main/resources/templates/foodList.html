@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+   <head>
+      <meta charset="UTF-8">
+      <title>Food List</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+   </head>
+   <body>
+   <th:block th:include="/fragments/header2"></th:block>
+   <th:block th:include="/fragments/_menu"></th:block>
+
+      <div class="page-title">Food List</div>
+
+      <div class="product-preview-container" th:each="fodInfo : ${paginationfoods.list}">
+            <ul>
+               <li><img class="product-image"
+                        th:src="@{|/foodImage?code=${fodInfo.code}|}" /></li>
+               <li>Code: <span th:utext="${fodInfo.code}"></span></li>
+               <li>Name: <span th:utext="${fodInfo.name}"></span></li>
+               <li>Price: <span th:utext="${#numbers.formatDecimal(fodInfo.price,3,2,'COMMA')}"></span></li>
+               <li>
+                  <a th:href="@{|/buyFood?code=${fodInfo.code}|}">Order Now</a>
+               </li>
+            <!-- For Manager edit Food -->
+            <th:block sec:authorize="hasAuthority('ROLE_MANAGER')">
+               <li>
+                 <a style="color:red;"
+                    th:href="@{|/admin/food?code=${fodInfo.code}|}">Edit Food</a>
+               </li>
+            </th:block>
+         </ul>
+      </div>
+      <br/>
+      <div class="page-navigator" th:if="${paginationfoods.totalPages > 1}">
+          <th:block th:each="page : ${paginationfoods.navigationPages}">
+
+              <a th:href="@{|/foodList?page=${page}|}" th:if="${page != -1}"
+                 class="nav-item" th:utext="${page}"></a>
+
+              <span class="nav-item" th:if="${page == -1}"> ... </span>
+
+          </th:block>
+      </div>
+
+
+   <footer>
+      <div class=footer_links>
+         <div th:replace="/fragments/footer :: footer"/>
+      </div>
+   </footer>
+
+   </body>
+</html>
