@@ -27,7 +27,6 @@ import java.util.List;
 
 @Controller
 @Transactional
-//@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
@@ -52,6 +51,7 @@ public class AdminController {
         }
     }
 
+    // GET: Show Login Page
     @RequestMapping(value = { "/admin/login" }, method = RequestMethod.GET)
     public String login(Model model) {
 
