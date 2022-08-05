@@ -1,0 +1,86 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head th:replace="/fragments/header :: header">-->
+<!--    <title>Add/Update Foods</title>-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--<div class=container>-->
+
+<!--    <h1 class="jumbotron">-->
+<!--        Add/update food here-->
+<!--    </h1>-->
+
+<!--    <section class="container content-section">-->
+
+<!--        <div class="order-items">-->
+<!--            <form th:object="${foodForm}" th:action="@{/food/add}"-->
+<!--                  method="POST" enctype="multipart/form-data">-->
+<!--                <table style="text-align:left;">-->
+<!--                    <tr>-->
+<!--                        <td>ID *</td>-->
+<!--                        <td style="color:red;">-->
+<!--                            <input th:field="*{newFood}" type="hidden"/>-->
+<!--                            <input th:if="${foodForm.newFood}" type="text"-->
+<!--                                   th:field="*{id}"/>-->
+<!--                            <th:block th:if="${!foodForm.newFood}">-->
+<!--                                <span th:utext="${foodForm.id}"></span>-->
+<!--                                <input type="hidden" th:field="*{id}"/>-->
+<!--                            </th:block>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <span class="error-message" th:if="${#fields.hasErrors('id')}" th:errors="*{id}">..</span>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Name *</td>-->
+<!--                        <td><input th:field="*{name}"/></td>-->
+<!--                        <td>-->
+<!--                            <span class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">..</span>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Price *</td>-->
+<!--                        <td><input th:field="*{price}"/></td>-->
+<!--                        <td>-->
+<!--                            <span class="error-message" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">..</span>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Image</td>-->
+<!--                        <td>-->
+<!--                            <img th:src="@{|/food/image?id=${foodForm.id}|}" width="100"/>-->
+<!--                        </td>-->
+<!--                        <td></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Upload Image</td>-->
+<!--                        <td><input type="file" th:field="*{fileData}"/></td>-->
+<!--                        <td></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>&nbsp;</td>-->
+<!--                        <td>-->
+<!--                            <input class="btn-primary" type="submit" value="Submit"/>-->
+<!--                            <input class="btn" type="reset" value="Reset"/>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                </table>-->
+<!--            </form>-->
+
+<!--        </div>-->
+<!--    </section>-->
+<!--</div>-->
+
+
+<!--<footer>-->
+<!--    <div class=footer_links>-->
+<!--        <div th:replace="/fragments/footer :: footer"/>-->
+<!--    </div>-->
+<!--</footer>-->
+
+<!--</body>-->
+
+<!--</html>-->
