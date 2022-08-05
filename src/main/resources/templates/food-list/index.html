@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head th:replace="/fragments/header :: header">-->
+<!--    <title>Manage Foods</title>-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--<div class=container>-->
+
+<!--    <h1 class="jumbotron">-->
+<!--        Manage foods here-->
+<!--    </h1>-->
+
+<!--    <section class="container content-section">-->
+<!--        <div th:each="prodInfo : ${paginationFoods}">-->
+<!--            <div class="card" style="width: 18rem;">-->
+<!--                <img class="card-img-top" th:src="@{|/food/image?id=${prodInfo.id}|}"/>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">-->
+<!--                        <span th:utext="${prodInfo.name}"></span>-->
+<!--                        (ID: <span th:utext="${prodInfo.id}"></span>)-->
+<!--                    </h5>-->
+
+<!--                    <p class="card-text">-->
+<!--                        <span th:utext="${#numbers.formatDecimal(prodInfo.price,3,2,'COMMA')}"></span>-->
+<!--                    </p>-->
+<!--                    <a class="btn btn-primary"-->
+<!--                       th:href="@{|/food/update?id=${prodInfo.id}|}">Edit Food</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--</div>-->
+
+
+<!--<footer>-->
+<!--    <div class=footer_links>-->
+<!--        <div th:replace="/fragments/footer :: footer"/>-->
+<!--    </div>-->
+<!--</footer>-->
+
+<!--</body>-->
+
+<!--</html>-->

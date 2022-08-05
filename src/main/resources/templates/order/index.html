@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/fragments/header :: header">
+    <th:block th:include="/fragments/_menu"></th:block>
+    <title>Order Food</title>
+<!--    <link rel="stylesheet" href="../static/css/stylesfood.css" th:href="@{/css/stylesfood.css}">-->
+
+</head>
+
+<body>
+
+<div class=container>
+
+    <h1 id="order-title">
+      Fresh Food Forever
+    </h1>
+
+<!--    <section class="container content-section">-->
+<!--        <div th:each="fodInfo : ${paginationFoods}">-->
+<!--            <div class="card" style="width: 18rem;">-->
+<!--                <img class="card-img-top" th:src="@{|/food/image?id=${fodInfo.id}|}"/>-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">-->
+<!--                        <span th:utext="${fodInfo.name}"></span>-->
+<!--                        (ID: <span th:utext="${fodInfo.id}"></span>)-->
+<!--                    </h5>-->
+
+<!--                    <p class="card-text">-->
+<!--                        <span th:utext="${#numbers.formatDecimal(fodInfo.price,3,2,'COMMA')}"></span>-->
+<!--                    </p>-->
+<!--                    <a class="btn btn-primary"-->
+<!--                       th:href="@{|/shopping-cart/add?id=${fodInfo.id}|}">Add to Cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
+    <div class="product-preview-container" th:each="fodInfo : ${paginationfoods.list}">
+        <ul>
+            <li><img class="product-image"
+                     th:src="@{|/foodImage?code=${fodInfo.code}|}" /></li>
+            <li>Code: <span th:utext="${fodInfo.code}"></span></li>
+            <li>Name: <span th:utext="${fodInfo.name}"></span></li>
+            <li>Price: <span th:utext="${#numbers.formatDecimal(fodInfo.price,3,2,'COMMA')}"></span></li>
+            <li>
+                <button>
+                <a th:href="@{|/buyFood?code=${fodInfo.code}|}">Order Now</a>
+                </button>
+            </li>
+            <!-- For Manager edit Food -->
+            <th:block sec:authorize="hasAuthority('ROLE_MANAGER')">
+                <li>
+                    <a style="color:red;"
+                       th:href="@{|/admin/food?code=${fodInfo.code}|}">Edit Food</a>
+                </li>
+            </th:block>
+        </ul>
+    </div>
+    <br/>
+    <div class="page-navigator" th:if="${paginationfoods.totalPages > 1}">
+        <th:block th:each="page : ${paginationfoods.navigationPages}">
+
+            <a th:href="@{|/foodList?page=${page}|}" th:if="${page != -1}"
+               class="nav-item" th:utext="${page}"></a>
+
+            <span class="nav-item" th:if="${page == -1}"> ... </span>
+
+        </th:block>
+    </div>
+
+        <!--        <div class="order-items">-->
+        <!--            <ul>-->
+        <!--                <div class="order-item">-->
+        <!--                    <li><img class="order-item-image"-->
+        <!--                             th:src="@{|/food/image?id=${prodInfo.id}|}"/></li>-->
+        <!--                    &lt;!&ndash;                    <li>ID: <span th:utext="${prodInfo.id}"></span></li>&ndash;&gt;-->
+        <!--                    <li>Name: <span class="order-item-title" th:utext="${prodInfo.name}"></span></li>-->
+        <!--                    <li>Price: <span class="order-item-price" th:utext="${#numbers.formatDecimal(prodInfo.price,3,2,'COMMA')}"></span></li>-->
+        <!--                    <li>-->
+        <!--                        <a style="color:red;"-->
+        <!--                           th:href="@{|/food?id=${prodInfo.id}|}">Add to cart</a>-->
+        <!--                    </li>-->
+        <!--                </div>-->
+        <!--            </ul>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 1</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}" alt="baby shirt">-->
+        <!--                <div class="order-item-details">-->
+
+        <!--                    <span class="order-item-price">$12.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 2</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}" alt="baby shirt">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$14.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">Order Now</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 3</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$9.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 4</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$19.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 5</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$19.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 6</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$19.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 7</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$19.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 8</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$19.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 9</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$19.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 10</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$19.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 11</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$19.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="order-item">-->
+        <!--                <span class="order-item-title">Food 12</span>-->
+        <!--                <img class="order-item-image" th:src="@{/imgOrder/Capture.PNG}">-->
+        <!--                <div class="order-item-details">-->
+        <!--                    <span class="order-item-price">$19.99</span>-->
+        <!--                    <button class="btn btn-primary order-item-button" type="button">ADD TO CART</button>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--    </section>-->
+
+        <!--    <section class="container content-section">-->
+        <!--        <h2 class="section-header">CART</h2>-->
+        <!--        <div class="cart-row">-->
+        <!--            <span class="cart-item cart-header cart-column">ITEM</span>-->
+        <!--            <span class="cart-price cart-header cart-column">PRICE</span>-->
+        <!--            <span class="cart-quantity cart-header cart-column">QUANTITY</span>-->
+        <!--        </div>-->
+        <!--        <div class="cart-items">-->
+
+        <!--        </div>-->
+        <!--        <div class="cart-total">-->
+        <!--            <strong class="cart-total-title">Total</strong>-->
+        <!--            <span class="cart-total-price">$0</span>-->
+        <!--        </div>-->
+        <!--        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>-->
+<!--    </section>-->
+<!--</div>-->
+
+</div>
+<footer>
+    <div class=footer_links>
+        <div th:replace="/fragments/footer :: footer"/>
+    </div>
+</footer>
+
+</body>
+
+</html>

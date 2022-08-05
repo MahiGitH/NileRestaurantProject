@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css">
 
     <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css" />
-    <script src="../../static/js/script.js" th:src="@{/js/script.js}"></script>
+
 
 <!--    <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>-->
 <!--    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>-->
@@ -34,7 +34,10 @@
                 <li><a href="../index.html" th:href= "@{/}" title="Home page">Home</a></li>
                 <li><a href="../menu/index.html" th:href= "@{/menu}" title="Menu page">Menus</a></li>
                 <li><a href="../order/index.html" th:href= "@{/order}" title="order page">Order</a></li>
+<!--                <li><a th:href="@{/foodList}" title="foodlist page">Food list</a></li>-->
+                <li><a th:href="@{/shoppingCart}" title="foodlist page">My Cart</a></li>
                 <li><a href="../contact/contact1.html" th:href= "@{/contact}" title="contact page">Contact</a></li>
+                <li><a th:href="@{/admin/login}" title="contact page">Admin Login</a></li>
             </ul>
         </div>
 
@@ -60,7 +63,7 @@
             <h1 class="order_name">Order</h1>
         </a>
         <a href="menu/index.html" th:href= "@{/menu}">
-            <h1 class="menu_name">Menu</h1>
+            <h1 class="menu_name">Menus</h1>
         </a>
         <a href="contact/contact1.html" th:href= "@{/contact}">
             <h1 class="hour_name">Contact</h1>
@@ -166,6 +169,8 @@
         dots[slideIndex-1].className += " active";
     }
 </script>
+
+<script src="../../static/js/script.js" th:src="@{/js/script.js}"></script>
 </body>
 
 </html>
