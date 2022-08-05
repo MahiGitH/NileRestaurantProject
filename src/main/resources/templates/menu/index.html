@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../static/css/styles-menu.css" th:href="@{/css/stylesmenu.css}">
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+ 
+    <title>Nile Grocery & Ethiopian Restaurant </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles-menu.css" th:href="@{/css/stylesmenu.css}">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+
+    <script>
+        $("#search").click(function(e) {
+            e.preventDefault();
+            $(".search_box").toggleClass('active');
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div class=grid-layout>
+        <header>
+            <div class="logo">
+                <a th:href="@{/}">
+                    <img class="logo_image" th:src="@{/images/nile_logo.png}" alt="nile Logo">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="../index.html" th:href= "@{/}" title="Home page">Home</a></li>
+                    <li><a href="../menu/index.html" th:href= "@{/menu}" title="Menu page">Menus</a></li>
+                    <li><a href="../order/index.html" th:href= "@{/order}" title="order page">Order</a></li>
+                    <li><a href="../contact/contact1.html" th:href= "@{/contact}" title="contact page">Contact</a></li>
+
+                </ul>
+            </div>
+            <a class="clickable" href="../mobilemenu/index.html">
+                <img th:src="@{/images/three_lines.png}">
+            </a>
+        </header>
+
+
+        <main>
+            <img class="menuphoto" th:src="@{/imgMenu/menuu.png}">
+            <img class="aps" th:src="@{/imgMenu/appetizers.gif}">
+            <img class="entrees" th:src="@{/imgMenu/maindish.gif}">
+            <img class="desserts" th:src="@{/imgMenu/dessert.gif}">
+            
+
+        </main>
+        <footer>
+            <div class=footer_links>
+                <ul>
+                    <li><a class="white_link" href="../about/index.html" th:href = "@{/about}">About</a></li>
+                    <div class="circle"></div>
+                    <li><a class="white_link" href="../community/index.html" th:href ="@{/community}">Community</a></li>
+                    <div class="circle"></div>
+                    <li><a class="white_link" href="../press/press.html" th:href = "@{/press}">Press</a></li>
+                </ul>
+
+
+
+
+            </div>
+            <div class=socialmedia>
+                <a href="https://twitter.com/GroceryNile">
+                    <i id=social class="fab fa-twitter-square fa-3x" style="color:#000000;"></i></a>
+                <a href="https://www.instagram.com/nilegrocery/?hl=en">
+                    <i id=social class="fab fa-instagram fa-3x" style="color:#000000;"></i></a>
+                <a href="https://www.facebook.com/pages/category/Cafe/Nile-Grocery-Cafe-1200226006660902/">
+                    <i id=social class="fab fa-facebook-square fa-3x" style="color:#000000;"></i>
+                </a>
+            </div>
+            <div class=footer_words>
+                <h2>Connect with us to hear more about menu items, events, and updates!</h2>
+                <h3>The Nile Grocery and Ethiopian Restaurant</h3>
+                <p class="copyright">&copy Copyright 2022</p>
+              </div>
+        </footer>
+    </div>
+</body>
+
+</html>

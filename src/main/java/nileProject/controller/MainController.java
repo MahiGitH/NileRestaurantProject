@@ -310,4 +310,9 @@ public class MainController {
 
         return "press/press.html";
     }
+    @GetMapping("/menu")
+        public String getMenuPage() {
+
+            return "menu/index.html";
+        }
 }
