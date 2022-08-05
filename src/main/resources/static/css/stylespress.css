@@ -354,4 +354,12 @@ footer a {
     width: 150px;
     margin-left: 1vh;
 }
+.copyright{
+    color: white;
+    font-size: small;
+}
+
+.nile{
+    font-size: medium;
+}
 

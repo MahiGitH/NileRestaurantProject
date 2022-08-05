@@ -365,7 +365,7 @@ ul {
     font-size:12px;
     color: #777;
     height: 2.3rem;
-   }
+}
 
 .days div:hover:not(.today) {
     background-color: #A9A9A9;
@@ -387,5 +387,3 @@ ul {
     color: black;
     font-weight: 300;
 }
-
-
