@@ -13,11 +13,11 @@
 <div id="foodlist-all">
     <div id="foodlist-cont">
 
-        <th:block th:include="/fragments/_menu"></th:block>
-        <head th:replace="/fragments/header :: header">
 
+        <th:block th:include="/fragments/header2"></th:block>
+<!--        <th:block th:include="/fragments/_menu"></th:block>-->
 
-      <div class="order-title">Fresh Food Forever</div>
+        <div class="order-title">Fresh Food Forever</div>
 
       <div class="product-preview-container" th:each="fodInfo : ${paginationfoods.list}">
             <ul>
@@ -25,7 +25,7 @@
                         th:src="@{|/foodImage?code=${fodInfo.code}|}" /></li>
                <li>Code: <span th:utext="${fodInfo.code}"></span></li>
                <li>Name: <span th:utext="${fodInfo.name}"></span></li>
-               <li>Price:&#36; <span th:utext="${#numbers.formatDecimal(fodInfo.price,1,2,'COMMA')}"></span></li>
+               <li>Price:&#36; <span th:utext="${#numbers.formatDecimal(fodInfo.price,1,2,'POINT')}"></span></li>
                <li>
                    <button>
                   <a th:href="@{|/buyFood?code=${fodInfo.code}|}">Order Now</a>
