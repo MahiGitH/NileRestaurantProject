@@ -29,7 +29,7 @@
         <li>Total:
             $
             <span class="total"
-                  th:utext="${#numbers.formatDecimal(myCart.amountTotal,1,2,'COMMA')}">
+                  th:utext="${#numbers.formatDecimal(myCart.amountTotal,1,2,'POINT')}">
                </span>
 
         </li>
@@ -63,14 +63,14 @@
             <li>Price:
                 &#36;
                 <span class="price"
-                      th:utext="${#numbers.formatDecimal(cartLineInfo.foodInfo.price,1,2,'COMMA')}">
+                      th:utext="${#numbers.formatDecimal(cartLineInfo.foodInfo.price,1,2,'POINT')}">
                   </span>
             </li>
             <li>Quantity: <span th:utext="${cartLineInfo.quantity}"></span></li>
             <li>Subtotal:
                 &#36;
                 <span class="subtotal"
-                      th:utext="${#numbers.formatDecimal(cartLineInfo.amount,1,2,'COMMA')}">
+                      th:utext="${#numbers.formatDecimal(cartLineInfo.amount,1,2,'POINT')}">
                   </span>
             </li>
         </ul>
