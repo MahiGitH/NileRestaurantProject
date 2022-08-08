@@ -360,12 +360,14 @@ ul {
     float: right;
     padding-top: 10px;
     position: absolute; top: 140px;
+    margin-right: 100px;
 }
 
 .month .prev{
     float: left;
     padding-top: 10px;
     position: absolute; top: 140px;
+
 }
 .prev-date {
     float: left;
@@ -408,10 +410,11 @@ month div{
     color: #666;
     text-align: center;
     position: relative;
-
 }
 
-
+.calendar-content {
+    width: 100%;
+}
 .days {
     width: 100%;
     padding: 0.2rem;
