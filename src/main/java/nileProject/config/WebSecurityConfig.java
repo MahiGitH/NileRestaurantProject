@@ -44,9 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         // Pages only for MANAGER
         http.authorizeRequests().antMatchers("/admin/food").access("hasRole('ROLE_MANAGER')");
 
-        // When user login, role XX.
-        // But access to the page requires the YY role,
-        // An AccessDeniedException will be thrown.
+
         http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 
         // Configuration for Login Form.

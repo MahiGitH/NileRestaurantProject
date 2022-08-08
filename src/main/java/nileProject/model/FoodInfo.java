@@ -3,18 +3,21 @@ package nileProject.model;
 import lombok.Data;
 import nileProject.entity.Food;
 
-@Data
+//@Data
 
 public class FoodInfo {
     private String code;
     private String name;
     private double price;
 
+    public FoodInfo(){
+    }
     public FoodInfo(Food food) {
         this.code = food.getCode();
         this.name = food.getName();
         this.price = food.getPrice();
     }
+
 
 
     // Using in JPA/Hibernate query

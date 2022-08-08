@@ -13,34 +13,20 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css">
     <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css"/>
-    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
-    <!--<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
-
-    <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="-->
-    <!--               crossorigin="anonymous"></script>-->
-
-    <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-
-
-    <!--    <script th:inline="javascript">-->
-    <!--        $("#search").click(function (e) {-->
-    <!--            e.preventDefault();-->
-    <!--            $(".search_box").toggleClass('active');-->
-    <!--        });-->
-    <!--    </script>-->
-
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesfood.css}">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
-<div class=grid-layout>
+<div class=log-all>
     <header th:replace="/fragments/header.html::header" id="header"></header>
-
+    <div class="login-container">
     <div class="page-title">Admin Login</div>
 
-    <div class="login-container">
-        <h3 style="font-size: 20px">Enter username and password</h3>
+
+<!--        <h3 style="font-size: 20px;">Enter username and password:</h3>-->
         <br>
+
         <!-- /login?error=true -->
         <th:block th:if="${#session != null && #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}">
             <div th:if= "${#request.getParameter('error') == 'true'}"
@@ -52,17 +38,20 @@
 
         <form method="POST"
               th:action="@{/j_spring_security_check}">
+            <div class="imgcontainer">
+                <img th:src="@{/images/login.png}"alt="login" class="login">
+            </div>
             <table>
                 <tr>
-                    <td>User Name *</td>
+                    <td>User Name: </td>
                     <td><input name="userName" /></td>
                 </tr>
                 <tr>
-                    <td>Password *</td>
+                    <td>Password:  </td>
                     <td><input type="password" name="password" /></td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td>&nbsp;&nbsp; </td>
                     <td>
                         <input type="submit" value="Login" />
                         <input type="reset"  value="Reset" />
@@ -73,15 +62,16 @@
 
         <span class="error-message" th:utext="${error}"></span>
     </div>
-</div>
 
 
-<footer>
+
+<footer id="footer">
     <div class=footer_links>
         <div th:replace="/fragments/footer :: footer"/>
     </div>
 </footer>
-
+</div>
+<script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
 </body>
 
 </html>

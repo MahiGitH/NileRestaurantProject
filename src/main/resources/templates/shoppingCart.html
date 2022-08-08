@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesfood.css}">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
+<div id="allcart-cont">
+    <div id="mycart-cont">
 <head th:replace="/fragments/header :: header">
-<!--<th:block th:include="/_menu"></th:block>-->
-
-<div class="page-title">My Cart</div>
-
+<div class="mycart-title">My Cart</div>
 <th:block th:if="${cartForm == null || cartForm.cartLines == null || cartForm.cartLines.empty}">
-    <h2 style="color: black; text-align: center">There is no items in Cart</h2>
-    <div style="text-align: center;text-decoration: underline">
-    <a th:href="@{/order}">Show Food List</a>
+    <h2 style="color: black; text-align: center; font-size: 30px">There is no items in Cart</h2>
+    <div style="text-align: center;text-decoration: underline ; font-size: 30px">
+    <a th:href="@{/foodList}">Show Order Here</a>
     </div>
 </th:block>
 
 <th:block th:if="${cartForm != null && cartForm.cartLines != null && !cartForm.cartLines.empty}">
     <form method="POST" th:object="${cartForm}" th:action="@{/shoppingCart}">
 
-        <div class="product-preview-container"
+        <div class="cart-preview-container"
              th:each="cartLineInfo, varStatus : ${cartForm.cartLines}">
             <ul>
                 <li><img class="product-image"
                          th:src="@{|/foodImage?code=${cartLineInfo.foodInfo.code}|}" />
+
                 </li>
                 <li>Code: <span th:utext="${cartLineInfo.foodInfo.code}"></span>
                     <input type="hidden"
@@ -34,8 +36,9 @@
                 </li>
                 <li>Name: <span th:utext="${cartLineInfo.foodInfo.name}"></span></li>
                 <li>Price:
+                    &#36;
                     <span class="price"
-                          th:utext="${#numbers.formatDecimal(cartLineInfo.foodInfo.price,3,2,'COMMA')}">
+                          th:utext="${#numbers.formatDecimal(cartLineInfo.foodInfo.price,1,2,'COMMA')}"> &#36;
                         </span>
                 </li>
                 <li>Quantity:
@@ -44,8 +47,9 @@
                             th:value="${cartLineInfo.quantity}" />
                 </li>
                 <li>Subtotal:
+                    &#36;
                     <span class="subtotal"
-                          th:utext="${#numbers.formatDecimal(cartLineInfo.amount,3,2,'COMMA')}">
+                          th:utext="${#numbers.formatDecimal(cartLineInfo.amount,1,2,'COMMA')}">
                         </span>
                 </li>
                 <li>
@@ -58,23 +62,20 @@
 
         <div style="clear: both"></div>
         <button>
-<!--        <input class="button-update-sc" type="submit" value="Update Quantity" />-->
             <a th:href="@{/shoppingCart}">Update Quantity</a>
         </button>
-<!--        <button>-->
-<!--            <a th:href="@{|/buyFood?code=${fodInfo.code}|}">Order Now</a>-->
-<!--        </button>-->
         <a class="navi-item"
            th:href="@{/shoppingCartCustomer}">Enter Customer Info</a>
         <a class="navi-item"
-           th:href="@{/order}">Continue Buy</a>
+           th:href="@{/foodList}">Continue Buy</a>
     </form>
 </th:block>
-
-<footer>
+</div>
+<footer id="footer">
     <div class=footer_links>
         <div th:replace="/fragments/footer :: footer"/>
     </div>
 </footer>
+    </div>
 </body>
 </html>

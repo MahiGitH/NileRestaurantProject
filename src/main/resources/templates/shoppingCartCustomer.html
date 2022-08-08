@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesfood.css}">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
-<head th:replace="/fragments/header :: header">
-<!--<th:block th:include="/_menu"></th:block>-->
+<div id="shopping-all">
+    <div id="shopping-cont">
+        <th:block th:include="/fragments/_menu"></th:block>
+        <head th:replace="/fragments/header :: header">
 
-<div class="page-title">Enter Customer Information</div>
+<div id="cust-title">Enter Customer Information</div>
 
 <form method="POST" th:object = "${customerForm}" th:action="@{/shoppingCartCustomer}">
 
-    <table>
+    <table class="cust-info">
         <tr>
             <td>Name *</td>
             <td><input th:field="*{name}" /></td>
@@ -47,17 +51,19 @@
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td><input type="submit" value="Submit" /> <input type="reset"
-                                                              value="Reset" /></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="submit" value="Submit" />
+                <input type="reset" value="Reset" /></td>
         </tr>
     </table>
 
 </form>
-<footer>
+</div>
+<footer id="footer">
     <div class=footer_links>
         <div th:replace="/fragments/footer :: footer"/>
     </div>
 </footer>
+    </div>
 </body>
 </html>

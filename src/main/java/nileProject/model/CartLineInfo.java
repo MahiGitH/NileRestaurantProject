@@ -16,11 +16,15 @@ public class CartLineInfo {
         this.quantity = 0;
     }
 
+    public FoodInfo getFoodInfo() {
+        return foodInfo;
+    }
     public void setFoodInfo(FoodInfo foodInfo) {
         this.foodInfo = foodInfo;
     }
 
     public int getQuantity() {
+
         return quantity;
     }
 
