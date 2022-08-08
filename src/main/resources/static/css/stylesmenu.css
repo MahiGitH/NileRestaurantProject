@@ -168,6 +168,9 @@ footer {
     align-items: flex-start;
     text-decoration: none;
 }
+footer p{
+    color: white;
+}
 
 .footer_links ul li {
     padding: 15px 30px;
