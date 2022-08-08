@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesfood.css}">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
+<div id="orderinfo-all">
+    <div id="orderinfo-cont">
 <th:block th:include="/fragments/header2"></th:block>
 <!--<th:block th:include="/_menu"></th:block>-->
 
-<div class="page-title">Order Info</div>
+<div class="orderinfo-title">Order Info</div>
 
 <div class="customer-info-container">
     <h3>Customer Information:</h3>
@@ -22,7 +26,7 @@
     <h3>Order Summary:</h3>
     <ul>
         <li>Total:
-            <span class="total" th:utext="${#numbers.formatDecimal(orderInfo.amount,3,2,'COMMA')}">
+            <span class="total" th:utext="${#numbers.formatDecimal(orderInfo.amount,1,2,'COMMA')}">
                </span>
         </li>
     </ul>
@@ -40,15 +44,16 @@
         <td th:utext="${orderDetailInfo.foodCode}"></td>
         <td th:utext="${orderDetailInfo.foodName}"></td>
         <td th:utext="${orderDetailInfo.quanity}"></td>
-        <td th:utext="${#numbers.formatDecimal(orderDetailInfo.price,3,2,'COMMA')}"></td>
-        <td th:utext="${#numbers.formatDecimal(orderDetailInfo.amount,3,2,'COMMA')}"></td>
+        <td th:utext="${#numbers.formatDecimal(orderDetailInfo.price,1,2,'COMMA')}"></td>
+        <td th:utext="${#numbers.formatDecimal(orderDetailInfo.amount,1,2,'COMMA')}"></td>
     </tr>
 </table>
-
-<footer>
+    </div>
+<footer id="footer">
     <div class=footer_links>
         <div th:replace="/fragments/footer :: footer"/>
     </div>
 </footer>
+</div>
 </body>
 </html>

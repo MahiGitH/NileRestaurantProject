@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+//@Data
 //@AllArgsConstructor
 //@NoArgsConstructor
 public class CartInfo {
@@ -107,6 +107,7 @@ public class CartInfo {
         }
         return quantity;
     }
+
 
 
     public double getAmountTotal() {

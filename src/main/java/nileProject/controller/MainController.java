@@ -23,6 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Locale;
 
 @Controller
 public class MainController {
@@ -69,24 +70,7 @@ public class MainController {
         return "index";
     }
 
-    // Food List
-
-    // Product List
-    @RequestMapping({ "/admin/order" })
-    public String listProductHandler(Model model, //
-                                     @RequestParam(value = "name", defaultValue = "") String likeName,
-                                     @RequestParam(value = "page", defaultValue = "1") int page) {
-        final int maxResult = 10;
-        final int maxNavigationPage = 10;
-
-        PaginationResult<FoodInfo> result = foodDto.queryFoods(page, //
-                maxResult, maxNavigationPage, likeName);
-
-        model.addAttribute("paginationFoods", result);
-        return "admin/order/index.html";
-    }
-
-    @RequestMapping({ "/order" })
+    @RequestMapping({ "/foodList" })
     public String listFoodHandler(Model model, //
                                      @RequestParam(value = "name", defaultValue = "") String likeName,
                                      @RequestParam(value = "page", defaultValue = "1") int page) {
@@ -97,7 +81,7 @@ public class MainController {
                 maxResult, maxNavigationPage, likeName);
 
         model.addAttribute("paginationfoods", result);
-        return "order/index.html";
+        return "foodList";
     }
 
     @RequestMapping({ "/buyFood" })
@@ -281,13 +265,6 @@ public class MainController {
 
         return "index";
     }
-
-//    @GetMapping("/order")
-//    public String getOrderPage() {
-//
-//        return "order/login.html";
-//    }
-
     @GetMapping("/contact")
     public String getContactPage() {
         return "contact/contact1.html";

@@ -99,7 +99,7 @@ public class AdminController {
             }
         }
         if (foodForm == null) {
-           foodForm = new FoodForm();
+            foodForm = new FoodForm();
             foodForm.setNewFood(true);
         }
         model.addAttribute("foodForm", foodForm);
@@ -108,9 +108,9 @@ public class AdminController {
     // POST: Save food
     @RequestMapping(value = { "/admin/food" }, method = RequestMethod.POST)
     public String foodSave(Model model, //
-                              @ModelAttribute("foodForm") @Validated FoodForm foodForm, //
-                              BindingResult result, //
-                              final RedirectAttributes redirectAttributes) {
+                           @ModelAttribute("foodForm") @Validated FoodForm foodForm, //
+                           BindingResult result, //
+                           final RedirectAttributes redirectAttributes) {
 
         if (result.hasErrors()) {
             return "food";
@@ -144,4 +144,5 @@ public class AdminController {
 
         return "order";
     }
+
 }

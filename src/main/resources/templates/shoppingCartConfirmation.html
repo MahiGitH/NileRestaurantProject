@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
-<!--    <link rel="stylesheet" type="text/css" th:href="@{/stylesfood.css}">-->
     <link rel="stylesheet" href="../static/css/stylesfood.css" th:href="@{/css/stylesfood.css}">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
-<head th:replace="/fragments/header :: header">
+<div id="cartconf-all">
+    <div id="cartconf-cont">
+        <head th:replace="/fragments/header :: header">
 <!--<th:block th:include="/_menu"></th:block>-->
 
-<div class="page-title">Confirmation</div>
+<div class="confirm-title">Confirmation</div>
 
 <div class="customer-info-container">
     <h3>Customer Information:</h3>
@@ -23,11 +25,13 @@
     </ul>
     <h3>Cart Summary:</h3>
     <ul>
-        <li>Quantity: <span th:utext="${myCart.quantityTotal}"></span>$</li>
+        <li>Quantity: <span th:utext="${myCart.quantityTotal}"></span> </li>
         <li>Total:
+            $
             <span class="total"
-                  th:utext="${#numbers.formatDecimal(myCart.amountTotal,3,2,'COMMA')}">
+                  th:utext="${#numbers.formatDecimal(myCart.amountTotal,1,2,'COMMA')}">
                </span>
+
         </li>
     </ul>
 </div>
@@ -48,7 +52,7 @@
         <ul>
             <li>
                 <img class="product-image"
-                     src="@{|/foodImage?code=${cartLineInfo.foodInfo.code}|}" />
+                    th:src="@{|/foodImage?code=${cartLineInfo.foodInfo.code}|}" />
             </li>
             <li>
                 Code: <span th:utext="${cartLineInfo.foodInfo.code}"></span>
@@ -57,23 +61,28 @@
             </li>
             <li>Name: <span th:utext="${cartLineInfo.foodInfo.name}"></span></li>
             <li>Price:
+                &#36;
                 <span class="price"
-                      th:utext="${#numbers.formatDecimal(cartLineInfo.foodInfo.price,3,2,'COMMA')}">
+                      th:utext="${#numbers.formatDecimal(cartLineInfo.foodInfo.price,1,2,'COMMA')}">
                   </span>
             </li>
             <li>Quantity: <span th:utext="${cartLineInfo.quantity}"></span></li>
             <li>Subtotal:
+                &#36;
                 <span class="subtotal"
-                      th:utext="${#numbers.formatDecimal(cartLineInfo.amount,3,2,'COMMA')}">
+                      th:utext="${#numbers.formatDecimal(cartLineInfo.amount,1,2,'COMMA')}">
                   </span>
             </li>
         </ul>
     </div>
 </div>
-    <footer>
+</div>
+    <footer id="footer">
         <div class=footer_links>
             <div th:replace="/fragments/footer :: footer"/>
         </div>
     </footer>
+
+    </div>
 </body>
 </html>

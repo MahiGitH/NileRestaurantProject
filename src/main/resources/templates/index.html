@@ -14,9 +14,6 @@
 
     <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css" />
 
-
-<!--    <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>-->
-<!--    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>-->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
@@ -32,12 +29,12 @@
         <div class="nav-menu">
             <ul>
                 <li><a href="../index.html" th:href= "@{/}" title="Home page">Home</a></li>
-                <li><a href="../menu/index.html" th:href= "@{/menu}" title="Menu page">Menus</a></li>
-                <li><a href="../order/index.html" th:href= "@{/order}" title="order page">Order</a></li>
-<!--                <li><a th:href="@{/foodList}" title="foodlist page">Food list</a></li>-->
+                <li><a href="../menu/index.html" th:href= "@{/menu}" title="Menu page">Menu</a></li>
+<!--                <li><a href="../order/index.html" th:href= "@{/order}" title="order page">Order</a></li>-->
+                <li><a th:href="@{/foodList}" title="foodlist page">Order Here</a></li>
                 <li><a th:href="@{/shoppingCart}" title="foodlist page">My Cart</a></li>
                 <li><a href="../contact/contact1.html" th:href= "@{/contact}" title="contact page">Contact</a></li>
-                <li><a th:href="@{/admin/login}" title="contact page">Admin Login</a></li>
+                <li><a style="color: darkred; font-weight: bold" th:href="@{/admin/login}" title="contact page">Admin Login</a></li>
             </ul>
         </div>
 
@@ -49,7 +46,7 @@
         <div class="wrapper a"></div>
     </div>
     <div class="button_box">
-        <a class="order_button" href="../order/index.html" th:href= "@{/order}" >
+        <a class="order_button" th:href= "@{/foodList}" >
             <img th:src="@{/images/ordermesob.png}">
         </a>
         <a class="menu_button" href="menu/index.html" th:src="@{/menu}">
@@ -59,11 +56,11 @@
             <img th:src="@{images/contact.png}">
         </a>
 
-        <a href="order/index.html" th:href= "@{/order}">
-            <h1 class="order_name">Order</h1>
+        <a href="foodList.html" th:href= "@{/foodList}">
+            <h1 class="order_name">Order Here</h1>
         </a>
         <a href="menu/index.html" th:href= "@{/menu}">
-            <h1 class="menu_name">Menus</h1>
+            <h1 class="menu_name">Menu</h1>
         </a>
         <a href="contact/contact1.html" th:href= "@{/contact}">
             <h1 class="hour_name">Contact</h1>
@@ -109,32 +106,9 @@
         </div>
     </div>
 
-
-
     <footer>
         <div class=footer_links>
-            <ul>
-                <li><a class="white_link" href="../about/index.html" th:href = "@{/about}">About</a></li>
-                <div class="circle"></div>
-                <li><a class="white_link" href="../community/index.html" th:href ="@{/community}">Community</a></li>
-                <div class="circle"></div>
-                <li><a class="white_link" href="../press/press.html" th:href = "@{/press}">Press</a></li>
-            </ul>
-        </div>
-        <div class=socialmedia>
-            <a href="https://www.twitter.com/GroceryNile/?hl=en">
-                <i id=social class="fab fa-twitter-square fa-3x" style="color:#000000;"></i></a>
-            <a href="https://www.instagram.com/nilegrocery/?hl=en">
-                <i id=social class="fab fa-instagram fa-3x" style="color:#000000;"></i></a>
-            <a href="https://www.facebook.com/pages/category/Cafe/Nile-Grocery-Cafe-1200226006660902/">
-                <i id=social class="fab fa-facebook-square fa-3x" style="color:#000000;"></i>
-            </a>
-        </div>
-        <div class=footer_words>
-            <h2>Connect with us to hear more about menu items, events, and updates!</h2>
-            <br>
-            <h3 class="nile">The Nile Grocery and Ethiopian Restaurant</h3>
-            <p class="copyright"> &copy Copyright 2022</p>
+            <div th:replace="/fragments/footer :: footer"/>
         </div>
     </footer>
 </div>

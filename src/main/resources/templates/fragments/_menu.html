@@ -17,7 +17,7 @@
 
         <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
         <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     </div>
 </head>
 
@@ -29,6 +29,16 @@
      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
     <div class="header-bar">
+        <div class="nav-menu">
+            <ul>
+                <li><a href="../index.html" th:href="@{/}" title="Home page">Home</a></li>
+                <li><a th:href="@{/foodList}">Edit Order List</a></li>
+                <!--                <li><a href="../order/index.html" th:href= "@{/order}" title="order page">Order</a></li>-->
+                <!--                <li><a th:href="@{/shoppingCart}" title="shopping page">My Cart</a></li>-->
+                <li><a th:href="@{/admin/orderList}" title="orderlist page">Order List</a></li>
+                <li><a th:href="@{/admin/food}" title="food page">Create Food</a></li>
+            </ul>
+
         <th:block sec:authorize="isAuthenticated()">
             Hello
             <a th:href="@{/admin/accountInfo}" th:utext="${#request.userPrincipal.name}">..</a>
@@ -40,7 +50,7 @@
             <a th:href="@{/admin/login}">Login</a>
         </th:block>
     </div>
-
+    </div>
 </div>
 </body>
 </html>

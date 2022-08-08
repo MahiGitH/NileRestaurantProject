@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <title>Shopping Cart Finalize</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesfood.css}">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
-<head th:replace="/fragments/header :: header">
-<!--<th:block th:include="/_menu"></th:block>-->
+<div id="shopfinal-all">
+    <div id="shopfinal-cont">
+        <th:block th:include="/fragments/_menu"></th:block>
+        <head th:replace="/fragments/header :: header">
 
-<div class="page-title">Finalize</div>
-<div class="container">
-    <h3>Thank you for Order</h3>
+<div class="final-title">Finalize</div>
+<div class="final-container">
+    <h2 style="font-size: 20px; color: black">Thank you for Your Order</h2>
     Your order number is: <span th:utext="${lastOrderedCart.orderNum}"></span>
 </div>
-
-<footer>
+</div>
+<footer id="footer">
     <div class=footer_links>
         <div th:replace="/fragments/footer :: footer"/>
     </div>
 </footer>
+</div>
 </body>
 </html>

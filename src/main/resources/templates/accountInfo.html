@@ -2,17 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Account Info</title>
     <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/stylesfood.css}">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
-<body>
-<!--<header th:replace="/fragments/header2.html::header2" id="header"></header>-->
 
+<body>
+<div id="gridacc">
+<div id="acc-cont">
 <th:block th:include="/fragments/header2"></th:block>
 <!--<th:block th:include="/fragments/_menu"></th:block>-->
 
-<div class="page-title">Account Info</div>
+<div class="acc-title">Account Info</div>
 <div class="account-container">
     <ul>
         <li>User Name: <span th:utext="${#request.userPrincipal.name}"></span></li>
@@ -24,11 +26,12 @@
         </li>
     </ul>
 </div>
-
-<footer>
+</div>
+<footer id="footer">
     <div class=footer_links>
         <div th:replace="/fragments/footer :: footer"/>
     </div>
 </footer>
+</div>
 </body>
 </html>
